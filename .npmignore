@@ -12,6 +12,11 @@
 /transpiled-code
 /typings
 /example
+/assets
+/definitions
+/static
+/webpack.example.config.js
+/README.md
 CODE_OF_CONDUCT.md
 CONTRIBUTING.md
 ISSUE_TEMPLATE.md
