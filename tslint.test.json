@@ -1,0 +1,17 @@
+{
+  "extends": ["./tslint.json"],
+  "rules": {
+    "no-implicit-dependencies": false,
+    "no-reference": false,
+    "no-submodule-imports": false,
+    "typedef": [
+      false,
+      "call-signature",
+      "parameter",
+      "arrow-parameter",
+      "property-declaration",
+      "variable-declaration",
+      "member-variable-declaration"
+    ]
+  }
+}
