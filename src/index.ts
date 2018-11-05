@@ -55,6 +55,7 @@ export { IsoContainer } from './com/koreez/plugin/isometric/impl/IsoContainer';
 export { IsoImage } from './com/koreez/plugin/isometric/impl/IsoImage';
 export { IsoSprite } from './com/koreez/plugin/isometric/impl/IsoSprite';
 export { IsoText } from './com/koreez/plugin/isometric/impl/IsoText';
+export { IsoProjector } from './com/koreez/plugin/isometric/impl/IsoProjector';
 export { IsometricPlugin } from './com/koreez/plugin/IsometricPlugin';
 export {
   TIsoGameObject,
