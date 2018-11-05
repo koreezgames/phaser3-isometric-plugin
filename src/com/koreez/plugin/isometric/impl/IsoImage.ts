@@ -59,8 +59,7 @@ export class IsoImage extends Phaser.GameObjects.Image
   public setIsoText: (value: number) => {};
 
   constructor(
-    scene: Phaser.Scene,
-    projector: Projector,
+    scene: Phaser.Scene & { isoProjector: Projector },
     x: number,
     y: number,
     z: number,
@@ -68,7 +67,7 @@ export class IsoImage extends Phaser.GameObjects.Image
     frame?: string | integer,
   ) {
     super(scene, x, y, texture, frame);
-    this.__isoGameObject = new IsoObject(projector, this, x, y, z);
+    this.__isoGameObject = new IsoObject(scene.isoProjector, this, x, y, z);
   }
   private __isoGameObject: IsoObject;
 

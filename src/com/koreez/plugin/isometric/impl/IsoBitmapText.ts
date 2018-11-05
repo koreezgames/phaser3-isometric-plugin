@@ -59,8 +59,7 @@ export class IsoBitmapText extends Phaser.GameObjects.BitmapText
   public setIsoText: (value: number) => {};
 
   constructor(
-    scene: Phaser.Scene,
-    projector: Projector,
+    scene: Phaser.Scene & { isoProjector: Projector },
     x: number,
     y: number,
     z: number,
@@ -70,8 +69,7 @@ export class IsoBitmapText extends Phaser.GameObjects.BitmapText
     align?: integer,
   ) {
     super(scene, x, y, font, text, size, align);
-
-    this.__isoGameObject = new IsoObject(projector, this, x, y, z);
+    this.__isoGameObject = new IsoObject(scene.isoProjector, this, x, y, z);
   }
 
   private __isoGameObject: IsoObject;

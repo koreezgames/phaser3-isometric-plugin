@@ -56,8 +56,7 @@ export class IsoSprite extends Phaser.GameObjects.Sprite
   public static readonly ISO_SPRITE: string = 'isoSprite';
 
   constructor(
-    scene: Phaser.Scene,
-    projector: Projector,
+    scene: Phaser.Scene & { isoProjector: Projector },
     x: number,
     y: number,
     z: number,
@@ -65,7 +64,7 @@ export class IsoSprite extends Phaser.GameObjects.Sprite
     frame?: string | number,
   ) {
     super(scene, x, y, key, frame);
-    this.__isoGameObject = new IsoObject(projector, this, x, y, z);
+    this.__isoGameObject = new IsoObject(scene.isoProjector, this, x, y, z);
   }
 
   private __isoGameObject: IsoObject;

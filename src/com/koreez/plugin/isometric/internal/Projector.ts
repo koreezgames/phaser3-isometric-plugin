@@ -44,17 +44,15 @@ export class Projector {
    * @param {Phaser.Geom.Point} origin - The origin of Iso calculation
    */
   constructor(
-    scene: Phaser.Scene,
-    projectionAngle: number,
-    origin: Phaser.Geom.Point = new Phaser.Geom.Point(0.5, 0.5),
+    scene: Phaser.Scene & {
+      isoProjectionAngle?: number;
+      isoProjector?: Projector;
+      isoOrigin?: Phaser.Geom.Point;
+    },
   ) {
     this.__scene = scene;
-
-    this.__projectionAngle = 0;
-
-    this.projectionAngle = projectionAngle || Projector.CLASSIC;
-
-    this.__origin = origin;
+    this.projectionAngle = scene.isoProjectionAngle || Projector.CLASSIC;
+    this.__origin = scene.isoOrigin || new Phaser.Geom.Point(0.5, 0.5);
   }
   /**
    * @property {Phaser.Scene} scene - The current scene object.

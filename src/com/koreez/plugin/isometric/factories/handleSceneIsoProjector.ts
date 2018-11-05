@@ -10,21 +10,13 @@ import { Projector } from '../internal/Projector';
 export const handleSceneIsoProjector: (
   scene: Phaser.Scene & {
     isoProjectionAngle?: number;
-    isoProjector?: Projector;
-    isoOrigin?: Phaser.Geom.Point;
   },
 ) => void = (
   scene: Phaser.Scene & {
-    isoProjectionAngle?: number;
     isoProjector?: Projector;
-    isoOrigin?: Phaser.Geom.Point;
   },
 ) => {
   if (!scene.isoProjector) {
-    scene.isoProjector = new Projector(
-      scene,
-      scene.isoProjectionAngle,
-      scene.isoOrigin,
-    );
+    scene.isoProjector = new Projector(scene);
   }
 };

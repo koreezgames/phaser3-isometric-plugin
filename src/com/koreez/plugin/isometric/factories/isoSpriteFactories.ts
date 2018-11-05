@@ -17,8 +17,9 @@ export function isoSpriteFactory(
   frame?: string | number,
 ): IsoSprite {
   handleSceneIsoProjector(this.scene);
+
   return this.scene.add.existing(
-    new IsoSprite(this.scene, this.scene.isoProjector, x, y, z, key, frame),
+    new IsoSprite(this.scene, x, y, z, key, frame),
   );
 }
 
@@ -35,15 +36,7 @@ export function isoSpriteCreator(
   const key: any = getAdvancedValue(config, 'key', null);
   const frame: any = getAdvancedValue(config, 'frame', null);
   handleSceneIsoProjector(this.scene);
-  const isoSprite: IsoSprite = new IsoSprite(
-    this.scene,
-    this.scene.isoProjector,
-    x,
-    y,
-    z,
-    key,
-    frame,
-  );
+  const isoSprite: IsoSprite = new IsoSprite(this.scene, x, y, z, key, frame);
   Phaser.GameObjects.BuildGameObject(this.scene, isoSprite, config);
   return isoSprite;
 }

@@ -57,15 +57,14 @@ export class IsoContainer extends Phaser.GameObjects.Container
   }
 
   constructor(
-    scene: Phaser.Scene,
-    projector: Projector,
+    scene: Phaser.Scene & { isoProjector: Projector },
     x?: number,
     y?: number,
     z?: number,
     children?: Phaser.GameObjects.GameObject[],
   ) {
     super(scene, x, y, children);
-    this.__isoGameObject = new IsoObject(projector, this, x, y, z);
+    this.__isoGameObject = new IsoObject(scene.isoProjector, this, x, y, z);
   }
   private __isoGameObject: IsoObject;
 

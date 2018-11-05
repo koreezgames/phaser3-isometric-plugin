@@ -19,7 +19,7 @@ export function isoImageFactory(
   handleSceneIsoProjector(this.scene);
 
   return this.scene.add.existing(
-    new IsoImage(this.scene, this.scene.isoProjector, x, y, z, texture, frame),
+    new IsoImage(this.scene, x, y, z, texture, frame),
   );
 }
 
@@ -35,15 +35,7 @@ export function isoImageCreator(config: any, addToScene?: boolean): IsoImage {
 
   handleSceneIsoProjector(this.scene);
 
-  const isoImage: IsoImage = new IsoImage(
-    this.scene,
-    this.scene.isoProjector,
-    x,
-    y,
-    z,
-    key,
-    frame,
-  );
+  const isoImage: IsoImage = new IsoImage(this.scene, x, y, z, key, frame);
   Phaser.GameObjects.BuildGameObject(this.scene, isoImage, config);
   return isoImage;
 }

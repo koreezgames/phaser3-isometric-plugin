@@ -18,7 +18,7 @@ export function isoContainerFactory(
   handleSceneIsoProjector(this.scene);
 
   return this.scene.add.existing(
-    new IsoContainer(this.scene, this.scene.isoProjector, x, y, z, children),
+    new IsoContainer(this.scene, x, y, z, children),
   );
 }
 
@@ -42,7 +42,6 @@ export function isoContainerCreator(
   );
   const isoContainer: IsoContainer = new IsoContainer(
     this.scene,
-    this.scene.isoProjector,
     x,
     y,
     z,

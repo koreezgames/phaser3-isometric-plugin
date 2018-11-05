@@ -17,9 +17,7 @@ export function isoTextFactory(
   style: object,
 ): IsoText {
   handleSceneIsoProjector(this.scene);
-  return this.scene.add.existing(
-    new IsoText(this.scene, this.scene.isoProjector, x, y, z, text, style),
-  );
+  return this.scene.add.existing(new IsoText(this.scene, x, y, z, text, style));
 }
 
 export function isoTextCreator(config: any, addToScene?: boolean): IsoText {
@@ -32,15 +30,7 @@ export function isoTextCreator(config: any, addToScene?: boolean): IsoText {
   const content: string | string[] = getAdvancedValue(config, 'text', '');
   const style: object = getAdvancedValue(config, 'style', null);
   handleSceneIsoProjector(this.scene);
-  const isoText: IsoText = new IsoText(
-    this.scene,
-    this.scene.isoProjector,
-    x,
-    y,
-    z,
-    content,
-    style,
-  );
+  const isoText: IsoText = new IsoText(this.scene, x, y, z, content, style);
   Phaser.GameObjects.BuildGameObject(this.scene, isoText, config);
   return isoText;
 }

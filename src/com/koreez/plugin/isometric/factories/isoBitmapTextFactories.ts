@@ -21,17 +21,7 @@ export function isoBitmapTextFactory(
   handleSceneIsoProjector(this.scene);
 
   return this.scene.add.existing(
-    new IsoBitmapText(
-      this.scene,
-      this.scene.isoProjector,
-      x,
-      y,
-      z,
-      font,
-      text,
-      size,
-      align,
-    ),
+    new IsoBitmapText(this.scene, x, y, z, font, text, size, align),
   );
 }
 
@@ -55,7 +45,6 @@ export function isoBitmapTextCreator(
 
   const isoBitmapText: IsoBitmapText = new IsoBitmapText(
     this.scene,
-    this.scene.isoProjector,
     x,
     y,
     z,
