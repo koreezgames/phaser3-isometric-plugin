@@ -41,18 +41,23 @@ export class Projector {
    * @constructor
    * @param {Phaser.Scene} scene - The current scene object.
    * @param {number} projectionAngle - The angle of the axonometric projection in radians. Defaults to approx. 0.4636476 (Math.atan(0.5) which is suitable for 2:1 pixel art dimetric)
+   * @param {Phaser.Geom.Point} origin - The origin of Iso calculation
    */
-  constructor(scene: Phaser.Scene, projectionAngle: number) {
+  constructor(
+    scene: Phaser.Scene,
+    projectionAngle: number,
+    origin: Phaser.Geom.Point = new Phaser.Geom.Point(0.5, 0.5),
+  ) {
     this.__scene = scene;
 
     this.__projectionAngle = 0;
 
     this.projectionAngle = projectionAngle || Projector.CLASSIC;
 
-    this.__origin = new Phaser.Geom.Point(0.5, 0.5);
+    this.__origin = origin;
   }
   /**
-   * @property {Phaser.Scene} scne - The current scene object.
+   * @property {Phaser.Scene} scene - The current scene object.
    */
   private __scene: Phaser.Scene;
   /**
