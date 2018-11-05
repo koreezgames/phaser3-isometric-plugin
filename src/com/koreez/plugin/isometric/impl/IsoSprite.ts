@@ -56,7 +56,7 @@ export class IsoSprite extends Phaser.GameObjects.Sprite
   public static readonly ISO_SPRITE: string = 'isoSprite';
 
   constructor(
-    scene: Phaser.Scene & { isoProjector: Projector },
+    scene: Phaser.Scene & { isoProjector?: Projector },
     x: number,
     y: number,
     z: number,

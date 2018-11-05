@@ -57,7 +57,7 @@ export class IsoText extends Phaser.GameObjects.Text
   public setIsoText: (value: number) => {};
 
   constructor(
-    scene: Phaser.Scene & { isoProjector: Projector },
+    scene: Phaser.Scene & { isoProjector?: Projector },
     x: number,
     y: number,
     z: number,
