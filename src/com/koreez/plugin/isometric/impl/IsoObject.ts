@@ -5,11 +5,11 @@
 //  in accordance with the terms of the license agreement accompanying it.
 // ------------------------------------------------------------------------------
 
-import { Projector } from '../internal/Projector';
-import { Cube } from '../internal/Cube';
-import { TPhaserIsoGameObject } from '../api/TPhaserIsoGameObject';
 import { IIsoGameObject } from '../api/IIsoGameObject';
+import { TPhaserIsoGameObject } from '../api/TPhaserIsoGameObject';
+import { Cube } from '../internal/Cube';
 import { Point3 } from '../internal/Point3';
+import { Projector } from '../internal/Projector';
 
 /** @internal
  */
@@ -70,6 +70,10 @@ export class IsoObject implements IIsoGameObject {
    */
   get isoPosition(): Point3 {
     return this.__isoPosition;
+  }
+
+  set isoPosition(value: Point3) {
+    this.__isoPosition = value;
   }
 
   /**

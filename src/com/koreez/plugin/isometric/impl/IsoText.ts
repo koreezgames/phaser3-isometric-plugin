@@ -5,12 +5,12 @@
 //  in accordance with the terms of the license agreement accompanying it.
 // ------------------------------------------------------------------------------
 
-import { Projector } from '../internal/Projector';
-import { IsoObject } from './IsoObject';
 import { IIsoGameObject } from '../api/IIsoGameObject';
+import { IIsoPhaserGameObject } from '../api/IIsoPhaserGameObject';
 import { Cube } from '../internal/Cube';
 import { Point3 } from '../internal/Point3';
-import { IIsoPhaserGameObject } from '../api/IIsoPhaserGameObject';
+import { Projector } from '../internal/Projector';
+import { IsoObject } from './IsoObject';
 
 export class IsoText extends Phaser.GameObjects.Text
   implements IIsoGameObject, IIsoPhaserGameObject {
@@ -42,6 +42,10 @@ export class IsoText extends Phaser.GameObjects.Text
     return this.__isoGameObject.isoPosition;
   }
 
+  set isoPosition(value: Point3) {
+    this.__isoGameObject.isoPosition = value;
+  }
+
   get isoBounds(): Cube {
     return this.__isoGameObject.isoBounds;
   }
@@ -53,6 +57,7 @@ export class IsoText extends Phaser.GameObjects.Text
   get projector(): Projector {
     return this.__isoGameObject.projector;
   }
+
   public static readonly ISO_TEXT: string = 'isoText';
   public setIsoText: (value: number) => {};
 
@@ -70,7 +75,7 @@ export class IsoText extends Phaser.GameObjects.Text
   private __isoGameObject: IsoObject;
 
   public setIsoX: (v: number) => this = (value: number) => {
-    this.isoY = value;
+    this.isoX = value;
     return this;
   };
 
@@ -81,6 +86,26 @@ export class IsoText extends Phaser.GameObjects.Text
 
   public setIsoZ: (v: number) => this = (value: number) => {
     this.isoZ = value;
+    return this;
+  };
+
+  public setIsoPosition: (x: number, y?: number, z?: number) => this = (
+    x: number,
+    y?: number,
+    z?: number,
+  ) => {
+    if (x === undefined) {
+      x = 0;
+    }
+    if (y === undefined) {
+      y = x;
+    }
+    if (z === undefined) {
+      z = 0;
+    }
+    this.isoX = x;
+    this.isoY = y;
+    this.isoZ = z;
     return this;
   };
 }
