@@ -9,4 +9,5 @@ export interface IIsoPhaserGameObject {
   setIsoX: <T>(v: number) => ThisType<T>;
   setIsoY: <T>(v: number) => ThisType<T>;
   setIsoZ: <T>(v: number) => ThisType<T>;
+  setIsoPosition: <T>(x?: number, y?: number, z?: number) => ThisType<T>;
 }

@@ -93,8 +93,8 @@ export class IsoBitmapText extends Phaser.GameObjects.BitmapText
     return this;
   };
 
-  public setIsoPosition: (x: number, y?: number, z?: number) => this = (
-    x: number,
+  public setIsoPosition: (x?: number, y?: number, z?: number) => this = (
+    x?: number,
     y?: number,
     z?: number,
   ) => {
