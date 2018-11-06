@@ -5,7 +5,7 @@
 //  in accordance with the terms of the license agreement accompanying it.
 // ------------------------------------------------------------------------------
 
-import { Projector } from '../internal/Projector';
+import { Projector } from '../impl/Projector';
 
 export const handleSceneIsoProjector: (
   scene: Phaser.Scene & {

@@ -7,9 +7,9 @@
 
 import { IIsoGameObject } from '../api/IIsoGameObject';
 import { IIsoPhaserGameObject } from '../api/IIsoPhaserGameObject';
-import { Cube } from '../internal/Cube';
-import { Point3 } from '../internal/Point3';
-import { Projector } from '../internal/Projector';
+import { Cube } from './Cube';
+import { Point3 } from './Point3';
+import { Projector } from './Projector';
 import { IsoObject } from './IsoObject';
 
 export class IsoImage extends Phaser.GameObjects.Image

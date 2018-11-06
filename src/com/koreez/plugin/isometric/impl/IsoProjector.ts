@@ -5,4 +5,4 @@
 //  in accordance with the terms of the license agreement accompanying it.
 // ------------------------------------------------------------------------------
 
-export { Projector as IsoProjector } from '../internal/Projector';
+export { Projector as IsoProjector } from './Projector';
