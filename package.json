@@ -25,7 +25,7 @@
     },
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/koreezgames/phaser3-isometric-plugin"
     },
     "publishConfig": {
         "registry": "https://registry.npmjs.org"
@@ -43,19 +43,19 @@
     ],
     "license": "MIT",
     "bugs": {
-        "url": ""
+        "url": "https://github.com/koreezgames/phaser3-isometric-plugin/issues"
     },
-    "homepage": "",
+    "homepage": "https://github.com/koreezgames/phaser3-isometric-plugin",
     "dependencies": {},
     "peerDependencies": {
-        "phaser": "^3.15.0"
+        "phaser": "^3.15.1"
     },
     "devDependencies": {
         "@types/bluebird": "^3.5.24",
         "@types/chai": "^4.1.7",
         "@types/mocha": "^5.2.1",
         "@types/sinon": "^5.0.5",
-        "bluebird": "^3.5.2",
+        "bluebird": "^3.5.3",
         "browserify-versionify": "^1.0.6",
         "chai": "^4.2.0",
         "es6-map": "^0.1.5",
@@ -81,8 +81,8 @@
         "karma-webpack": "^3.0.5",
         "mocha": "^5.2.0",
         "phaser": "^3.15.1",
-        "prettier": "^1.14.3",
-        "publish-please": "^5.1.1",
+        "prettier": "^1.15.1",
+        "publish-please": "^5.2.0",
         "remap-istanbul": "^0.12.0",
         "rimraf": "^2.6.2",
         "sinon": "^6.3.5",
@@ -91,10 +91,10 @@
         "ts-node": "^7.0.1",
         "tslint": "^5.10.0",
         "tslint-config-prettier": "^1.15.0",
-        "tslint-consistent-codestyle": "^1.14.0",
+        "tslint-consistent-codestyle": "^1.14.1",
         "tslint-plugin-prettier": "^2.0.1",
-        "typescript": "^3.1.5",
-        "webpack": "^4.23.1",
+        "typescript": "^3.1.6",
+        "webpack": "^4.25.1",
         "webpack-cli": "^3.1.2",
         "webpack-concat-plugin": "^3.0.0",
         "webpack-dev-server": "^3.1.10"
