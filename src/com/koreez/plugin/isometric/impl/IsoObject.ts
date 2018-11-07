@@ -143,7 +143,11 @@ export class IsoObject implements IIsoGameObject {
 
   public set2DPosition(x?: number, y?: number): void {
     const out: Point3 = new Point3();
-    this.projector.unproject(new Phaser.Geom.Point(x, y), out, this.isoZ);
+    this.projector.unproject(
+      new Phaser.Geom.Point(x, y || this.__phaserIsoGameObject.y),
+      out,
+      this.isoZ,
+    );
     this.isoX = out.x;
     this.isoY = out.y;
   }
