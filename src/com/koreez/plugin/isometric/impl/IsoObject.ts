@@ -28,6 +28,7 @@ export class IsoObject implements IIsoGameObject {
     this.__isoPosition.x = value;
     this.__project();
     this.__resetIsoBounds();
+    this.__updateDepth();
   }
   /**
    * The axonometric position of the IsoSprite on the y axis. Increasing the y coordinate will move the object down and to the left on the screen.
@@ -43,6 +44,7 @@ export class IsoObject implements IIsoGameObject {
     this.__isoPosition.y = value;
     this.__project();
     this.__resetIsoBounds();
+    this.__updateDepth();
   }
 
   /**
@@ -139,6 +141,19 @@ export class IsoObject implements IIsoGameObject {
   private __isoBounds: Cube;
   private __phaserIsoGameObject: TPhaserIsoGameObject;
 
+  public set2DPosition(x?: number, y?: number): void {
+    const out: Point3 = new Point3();
+    this.projector.unproject(new Phaser.Geom.Point(x, y), out, this.isoZ);
+    this.isoX = out.x;
+    this.isoY = out.y;
+  }
+
+  public setIsoPosition(point: Point3): void {
+    this.isoX = point.x;
+    this.isoY = point.y;
+    this.isoZ = point.z;
+  }
+
   private __resetIsoBounds(): Cube {
     if (typeof this.__isoBounds === 'undefined') {
       this.__isoBounds = new Cube();
@@ -172,6 +187,10 @@ export class IsoObject implements IIsoGameObject {
       Math.abs(this.__phaserIsoGameObject.width * 0.5);
 
     return this.__isoBounds;
+  }
+
+  private __updateDepth(): void {
+    this.__phaserIsoGameObject.depth = this.isoX + this.isoY;
   }
 
   /**

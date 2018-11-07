@@ -1,3 +1,5 @@
+import { Point3 } from '../impl/Point3';
+
 // ------------------------------------------------------------------------------
 //  Copyright (c) 2018 Koreez LLC. All Rights Reserved.
 //
@@ -9,11 +11,6 @@ export interface IIsoPhaserGameObject {
   setIsoX: <T>(v: number) => ThisType<T>;
   setIsoY: <T>(v: number) => ThisType<T>;
   setIsoZ: <T>(v: number) => ThisType<T>;
-  setIsoPosition: <T>(x?: number, y?: number, z?: number) => ThisType<T>;
-  set2DPosition: <T>(
-    x?: number,
-    y?: number,
-    z?: number,
-    w?: number,
-  ) => ThisType<T>;
+  setIsoPosition: <T>(point3: Point3) => ThisType<T>;
+  set2DPosition: <T>(x?: number, y?: number) => ThisType<T>;
 }

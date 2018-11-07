@@ -88,15 +88,8 @@ export class IsoBitmapText extends Phaser.GameObjects.BitmapText
     return this;
   };
 
-  public set2DPosition(x?: number, y?: number, z?: number, w?: number): this {
-    this.setPosition(x, y, z, w);
-    const out: Point3 = new Point3();
-    this.__isoGameObject.projector.unproject(
-      new Phaser.Geom.Point(this.x, this.y),
-      out,
-      this.isoZ,
-    );
-    this.setIsoX(out.x).setIsoY(out.y);
+  public set2DPosition(x?: number, y?: number): this {
+    this.__isoGameObject.set2DPosition(x, y);
     return this;
   }
 
@@ -105,23 +98,8 @@ export class IsoBitmapText extends Phaser.GameObjects.BitmapText
     return this;
   };
 
-  public setIsoPosition: (x?: number, y?: number, z?: number) => this = (
-    x?: number,
-    y?: number,
-    z?: number,
-  ) => {
-    if (x === undefined) {
-      x = 0;
-    }
-    if (y === undefined) {
-      y = x;
-    }
-    if (z === undefined) {
-      z = 0;
-    }
-    this.isoX = x;
-    this.isoY = y;
-    this.isoZ = z;
+  public setIsoPosition(point3: Point3): this {
+    this.__isoGameObject.setIsoPosition(point3);
     return this;
-  };
+  }
 }
